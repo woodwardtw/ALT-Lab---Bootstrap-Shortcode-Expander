@@ -6,3 +6,12 @@
         jQuery(window.location.hash + '.collapse').collapse('show');
     	}
    });
+
+ function toggleIcon(e) {
+    jQuery(e.target)
+        .prev('.panel-heading')
+        .find(".more-less")
+        .toggleClass('glyphicon-plus glyphicon-minus');
+}
+jQuery('.panel-group').on('hidden.bs.collapse', toggleIcon);
+jQuery('.panel-group').on('shown.bs.collapse', toggleIcon);
